@@ -1,18 +1,18 @@
 def Triplets(nums, n):
 
-    triplet = []
-    utriplet = []
+    triplet = []                                        #for holding each triplets
+    utriplet = []                                       #for holding all triplets 
     nums.sort()
-    for i in range(n - 2):
-        j = i + 1
-        k = n - 1
+    for i in range(n - 2):                              # i is itereating through the list and holding 1st element of the triplet 
+        j = i + 1                                       # j is holding 2nd element of the triplet and is bigger than first element but shorter than 3rd element
+        k = n - 1                                       # k is holding 3rd element and is bigger than 1st and 2nd element
  
         while(j < k):
             triplet=[]
             
             if(nums[j] + nums[k] == -1*nums[i]):
                 triplet=[nums[i],nums[j],nums[k]]
-                utriplet.append(triplet)
+                utriplet.append(triplet)               #putting triplets in a list utriplet
                 j += 1
                 k -= 1                
                  
@@ -25,10 +25,10 @@ def Triplets(nums, n):
  
 
     for i in range(len(utriplet)):
-        print(utriplet[i])
+        print(utriplet[i])                          #printing each triplets
     return 1
 
-nums = [-12, 3, 6, 1, 6, 9] #taking input here.
+nums = [-12, 3, 6, 1, 6, 9]                         #taking sample input here.  (list)
 n = len(nums)
 
 Triplets(nums, n)
