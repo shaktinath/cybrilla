@@ -1,0 +1,37 @@
+def Triplets(nums, n):
+
+    triplet = []
+    utriplet = []
+    nums.sort()
+    for i in range(n - 2):
+        j = i + 1
+        k = n - 1
+ 
+        while(j < k):
+            triplet=[]
+            
+            if(nums[j] + nums[k] == -1*nums[i]):
+                triplet=[nums[i],nums[j],nums[k]]
+                utriplet.append(triplet)
+                j += 1
+                k -= 1                
+                 
+
+            elif(nums[i] + nums[j] > -1*nums[k]):
+                k -= 1
+                 
+            else:
+                j += 1
+ 
+
+    for i in range(len(utriplet)):
+        print(utriplet[i])
+    return 1
+
+nums = [-12, 3, 6, 1, 6, 9] #taking input here.
+n = len(nums)
+
+Triplets(nums, n)
+
+
+
